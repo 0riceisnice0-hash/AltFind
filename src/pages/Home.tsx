@@ -6,83 +6,83 @@ import './Home.css';
 export const Home: React.FC = () => {
   const fashionImages = [
     { 
-      url: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=800&q=80',
+      url: '/AltFind/images/fashion-1.jpg',
       alt: 'Minimal fashion editorial'
     },
     { 
-      url: 'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=800&q=80',
+      url: '/AltFind/images/fashion-2.jpg',
       alt: 'Clean streetwear'
     },
     { 
-      url: 'https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=800&q=80',
+      url: '/AltFind/images/fashion-3.jpg',
       alt: 'Bright fashion lookbook'
     },
     { 
-      url: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=800&q=80',
+      url: '/AltFind/images/fashion-4.jpg',
       alt: 'Neutral fashion photography'
     },
     { 
-      url: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=800&q=80',
+      url: '/AltFind/images/fashion-5.jpg',
       alt: 'Editorial outfit'
     },
     { 
-      url: 'https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=800&q=80',
+      url: '/AltFind/images/fashion-6.jpg',
       alt: 'Minimal wardrobe'
     },
     { 
-      url: 'https://images.unsplash.com/photo-1539533018447-63fcce2678e3?auto=format&fit=crop&w=800&q=80',
+      url: '/AltFind/images/fashion-7.jpg',
       alt: 'Fashion model neutral'
     },
     { 
-      url: 'https://images.unsplash.com/photo-1544957992-20514f595d6f?auto=format&fit=crop&w=800&q=80',
+      url: '/AltFind/images/fashion-8.jpg',
       alt: 'Streetwear clean'
     },
     { 
-      url: 'https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?auto=format&fit=crop&w=800&q=80',
+      url: '/AltFind/images/fashion-9.jpg',
       alt: 'Layered outfit'
     },
     { 
-      url: 'https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=800&q=80',
+      url: '/AltFind/images/fashion-10.jpg',
       alt: 'Monochrome fashion'
     },
     { 
-      url: 'https://images.unsplash.com/photo-1562157873-818bc0726f68?auto=format&fit=crop&w=800&q=80',
+      url: '/AltFind/images/fashion-11.jpg',
       alt: 'Casual chic'
     },
     { 
-      url: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=800&q=80',
+      url: '/AltFind/images/fashion-12.jpg',
       alt: 'Neutral tones outfit'
     },
     { 
-      url: 'https://images.unsplash.com/photo-1558769132-cb1aea1c8f86?auto=format&fit=crop&w=800&q=80',
+      url: '/AltFind/images/fashion-13.jpg',
       alt: 'Minimal style'
     },
     { 
-      url: 'https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=800&q=80',
+      url: '/AltFind/images/fashion-14.jpg',
       alt: 'Editorial fashion'
     },
     { 
-      url: 'https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=800&q=80',
+      url: '/AltFind/images/fashion-15.jpg',
       alt: 'Clean fashion photography'
     },
     { 
-      url: 'https://images.unsplash.com/photo-1479064555552-3ef4979f8908?auto=format&fit=crop&w=800&q=80',
+      url: '/AltFind/images/fashion-16.jpg',
       alt: 'Layered neutral look'
     },
     { 
-      url: 'https://images.unsplash.com/photo-1467043237213-65f2da53396f?auto=format&fit=crop&w=800&q=80',
+      url: '/AltFind/images/fashion-17.jpg',
       alt: 'Fashion model bright'
     },
     { 
-      url: 'https://images.unsplash.com/photo-1511401139252-f158d3209c17?auto=format&fit=crop&w=800&q=80',
+      url: '/AltFind/images/fashion-18.jpg',
       alt: 'Streetwear editorial'
     },
     { 
-      url: 'https://images.unsplash.com/photo-1491553895911-0055eca6402d?auto=format&fit=crop&w=800&q=80',
+      url: '/AltFind/images/fashion-19.jpg',
       alt: 'Sneakers fashion'
     },
     { 
-      url: 'https://images.unsplash.com/photo-1562447686-45df6e6e2229?auto=format&fit=crop&w=800&q=80',
+      url: '/AltFind/images/fashion-20.jpg',
       alt: 'Minimalist fashion'
     }
   ];
@@ -138,7 +138,6 @@ export const Home: React.FC = () => {
             <img 
               src={image.url} 
               alt={image.alt}
-              crossOrigin="anonymous"
               loading="lazy"
             />
           </div>
