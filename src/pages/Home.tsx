@@ -1,5 +1,6 @@
 import React from 'react';
 import { SearchBar } from '../components/SearchBar';
+import { Badge } from '../components/ui/Badge';
 import './Home.css';
 
 export const Home: React.FC = () => {
@@ -21,6 +22,22 @@ export const Home: React.FC = () => {
     { url: 'https://source.unsplash.com/400x550/?fashion,minimalist', alt: 'Fashion minimalist 15' },
   ];
 
+  const exampleQueries = [
+    'black puffer jacket',
+    'black zip hoodie',
+    'grey cargo trousers',
+    'white trainers',
+    'brown leather boots',
+  ];
+
+  const handleExampleClick = (query: string) => {
+    const searchInput = document.querySelector<HTMLInputElement>('.search-bar input');
+    if (searchInput) {
+      searchInput.value = query;
+      searchInput.focus();
+    }
+  };
+
   return (
     <div className="home">
       {/* Hero Section */}
@@ -32,6 +49,19 @@ export const Home: React.FC = () => {
           </p>
           <div className="home__search">
             <SearchBar />
+          </div>
+          <div className="home__examples">
+            <span className="home__examples-label">Try:</span>
+            {exampleQueries.map((query) => (
+              <Badge 
+                key={query}
+                variant="default"
+                onClick={() => handleExampleClick(query)}
+                style={{ cursor: 'pointer' }}
+              >
+                {query}
+              </Badge>
+            ))}
           </div>
         </div>
       </section>

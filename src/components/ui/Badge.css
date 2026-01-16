@@ -8,8 +8,15 @@
 }
 
 .badge--default {
-  background-color: #f3f4f6;
-  color: #1f2937;
+  background-color: rgba(212, 197, 169, 0.2);
+  color: #E8DCC4;
+  border: 1px solid rgba(212, 197, 169, 0.3);
+  transition: all 0.2s ease;
+}
+
+.badge--default:hover {
+  background-color: rgba(212, 197, 169, 0.3);
+  border-color: rgba(212, 197, 169, 0.5);
 }
 
 .badge--success {

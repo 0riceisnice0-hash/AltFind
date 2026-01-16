@@ -39,7 +39,21 @@
 }
 
 .home__search {
-  margin-bottom: 0;
+  margin-bottom: 2rem;
+}
+
+.home__examples {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.home__examples-label {
+  font-weight: 500;
+  color: #D4C5A9;
+  font-size: 0.95rem;
 }
 
 /* Fashion Gallery Section - Asymmetric grid */
@@ -98,6 +112,10 @@
   .home__hero-subtitle {
     font-size: 1.1rem;
     margin: 0 0 2rem;
+  }
+
+  .home__search {
+    margin-bottom: 1.5rem;
   }
 
   .home__gallery {
