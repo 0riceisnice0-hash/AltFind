@@ -5,21 +5,86 @@ import './Home.css';
 
 export const Home: React.FC = () => {
   const fashionImages = [
-    { url: 'https://source.unsplash.com/400x600/?fashion,editorial', alt: 'Fashion editorial 1' },
-    { url: 'https://source.unsplash.com/400x700/?streetwear,fashion', alt: 'Streetwear fashion 2' },
-    { url: 'https://source.unsplash.com/400x550/?avant-garde,fashion', alt: 'Avant-garde fashion 3' },
-    { url: 'https://source.unsplash.com/400x650/?minimal,fashion', alt: 'Minimal fashion 4' },
-    { url: 'https://source.unsplash.com/400x600/?fashion,model', alt: 'Fashion model 5' },
-    { url: 'https://source.unsplash.com/400x700/?fashion,photography', alt: 'Fashion photography 6' },
-    { url: 'https://source.unsplash.com/400x550/?fashion,style', alt: 'Fashion style 7' },
-    { url: 'https://source.unsplash.com/400x650/?fashion,lookbook', alt: 'Fashion lookbook 8' },
-    { url: 'https://source.unsplash.com/400x600/?fashion,runway', alt: 'Fashion runway 9' },
-    { url: 'https://source.unsplash.com/400x700/?fashion,chic', alt: 'Fashion chic 10' },
-    { url: 'https://source.unsplash.com/400x550/?fashion,designer', alt: 'Fashion designer 11' },
-    { url: 'https://source.unsplash.com/400x650/?fashion,couture', alt: 'Fashion couture 12' },
-    { url: 'https://source.unsplash.com/400x600/?fashion,vogue', alt: 'Fashion vogue 13' },
-    { url: 'https://source.unsplash.com/400x700/?fashion,aesthetic', alt: 'Fashion aesthetic 14' },
-    { url: 'https://source.unsplash.com/400x550/?fashion,minimalist', alt: 'Fashion minimalist 15' },
+    { 
+      url: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=800&q=80',
+      alt: 'Minimal fashion editorial'
+    },
+    { 
+      url: 'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=800&q=80',
+      alt: 'Clean streetwear'
+    },
+    { 
+      url: 'https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=800&q=80',
+      alt: 'Bright fashion lookbook'
+    },
+    { 
+      url: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=800&q=80',
+      alt: 'Neutral fashion photography'
+    },
+    { 
+      url: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=800&q=80',
+      alt: 'Editorial outfit'
+    },
+    { 
+      url: 'https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=800&q=80',
+      alt: 'Minimal wardrobe'
+    },
+    { 
+      url: 'https://images.unsplash.com/photo-1539533018447-63fcce2678e3?auto=format&fit=crop&w=800&q=80',
+      alt: 'Fashion model neutral'
+    },
+    { 
+      url: 'https://images.unsplash.com/photo-1544957992-20514f595d6f?auto=format&fit=crop&w=800&q=80',
+      alt: 'Streetwear clean'
+    },
+    { 
+      url: 'https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?auto=format&fit=crop&w=800&q=80',
+      alt: 'Layered outfit'
+    },
+    { 
+      url: 'https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=800&q=80',
+      alt: 'Monochrome fashion'
+    },
+    { 
+      url: 'https://images.unsplash.com/photo-1562157873-818bc0726f68?auto=format&fit=crop&w=800&q=80',
+      alt: 'Casual chic'
+    },
+    { 
+      url: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=800&q=80',
+      alt: 'Neutral tones outfit'
+    },
+    { 
+      url: 'https://images.unsplash.com/photo-1558769132-cb1aea1c8f86?auto=format&fit=crop&w=800&q=80',
+      alt: 'Minimal style'
+    },
+    { 
+      url: 'https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=800&q=80',
+      alt: 'Editorial fashion'
+    },
+    { 
+      url: 'https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=800&q=80',
+      alt: 'Clean fashion photography'
+    },
+    { 
+      url: 'https://images.unsplash.com/photo-1479064555552-3ef4979f8908?auto=format&fit=crop&w=800&q=80',
+      alt: 'Layered neutral look'
+    },
+    { 
+      url: 'https://images.unsplash.com/photo-1467043237213-65f2da53396f?auto=format&fit=crop&w=800&q=80',
+      alt: 'Fashion model bright'
+    },
+    { 
+      url: 'https://images.unsplash.com/photo-1511401139252-f158d3209c17?auto=format&fit=crop&w=800&q=80',
+      alt: 'Streetwear editorial'
+    },
+    { 
+      url: 'https://images.unsplash.com/photo-1491553895911-0055eca6402d?auto=format&fit=crop&w=800&q=80',
+      alt: 'Sneakers fashion'
+    },
+    { 
+      url: 'https://images.unsplash.com/photo-1562447686-45df6e6e2229?auto=format&fit=crop&w=800&q=80',
+      alt: 'Minimalist fashion'
+    }
   ];
 
   const exampleQueries = [
@@ -45,7 +110,7 @@ export const Home: React.FC = () => {
         <div className="home__hero-content">
           <h1 className="home__hero-title">Find similar clothes for less</h1>
           <p className="home__hero-subtitle">
-            Discover alternatives. Pay less.
+            Search by description or paste a product link.
           </p>
           <div className="home__search">
             <SearchBar />
