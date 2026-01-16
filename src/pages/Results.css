@@ -1,0 +1,89 @@
+.results {
+  width: 100%;
+  min-height: 50vh;
+}
+
+.results__container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.results__header {
+  margin-bottom: 2rem;
+}
+
+.results__title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0 0 0.5rem;
+}
+
+.results__hint {
+  font-size: 1rem;
+  color: #6b7280;
+  margin: 0;
+}
+
+.results__load-more {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+/* No Results State */
+.results__no-results {
+  text-align: center;
+  padding: 4rem 1rem;
+}
+
+.results__no-results-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.results__no-results-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0 0 0.5rem;
+}
+
+.results__no-results-text {
+  font-size: 1rem;
+  color: #6b7280;
+  margin: 0 0 2rem;
+}
+
+.results__no-results-suggestions {
+  max-width: 400px;
+  margin: 0 auto 2rem;
+  text-align: left;
+  background-color: #f9fafb;
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.results__no-results-suggestions-label {
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0 0 0.75rem;
+}
+
+.results__no-results-list {
+  margin: 0;
+  padding-left: 1.5rem;
+  color: #6b7280;
+  line-height: 1.8;
+}
+
+@media (max-width: 768px) {
+  .results__title {
+    font-size: 1.5rem;
+  }
+
+  .results__hint {
+    font-size: 0.875rem;
+  }
+}

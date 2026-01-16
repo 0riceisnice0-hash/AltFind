@@ -1,0 +1,171 @@
+.home {
+  width: 100%;
+}
+
+/* Hero Section */
+.home__hero {
+  padding: 4rem 1.5rem;
+  text-align: center;
+  background: linear-gradient(to bottom, #f9fafb, white);
+}
+
+.home__hero-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.home__hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0 0 1.5rem;
+  line-height: 1.2;
+}
+
+.home__hero-subtitle {
+  font-size: 1.25rem;
+  color: #6b7280;
+  margin: 0 0 2.5rem;
+  line-height: 1.6;
+}
+
+.home__search {
+  margin-bottom: 2rem;
+}
+
+.home__examples {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.home__examples-label {
+  font-weight: 500;
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+/* Trust Strip */
+.home__trust {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.home__trust-item {
+  text-align: center;
+}
+
+.home__trust-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.home__trust-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0 0 0.5rem;
+}
+
+.home__trust-text {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin: 0;
+}
+
+/* How It Works Preview */
+.home__how-it-works {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+  background-color: #f9fafb;
+  border-radius: 12px;
+}
+
+.home__section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1f2937;
+  text-align: center;
+  margin: 0 0 3rem;
+}
+
+.home__steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.home__step {
+  text-align: center;
+}
+
+.home__step-number {
+  width: 3rem;
+  height: 3rem;
+  background-color: #2563eb;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 auto 1rem;
+}
+
+.home__step-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0 0 0.5rem;
+}
+
+.home__step-text {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* CTA Block */
+.home__cta {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+  text-align: center;
+}
+
+.home__cta-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0 0 1.5rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .home__hero-title {
+    font-size: 2rem;
+  }
+
+  .home__hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .home__section-title {
+    font-size: 1.5rem;
+  }
+
+  .home__trust,
+  .home__steps {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
