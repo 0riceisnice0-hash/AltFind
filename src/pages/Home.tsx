@@ -135,7 +135,12 @@ export const Home: React.FC = () => {
       <section className="home__gallery">
         {fashionImages.map((image) => (
           <div key={image.url} className="home__gallery-item">
-            <img src={image.url} alt={image.alt} />
+            <img 
+              src={image.url} 
+              alt={image.alt}
+              crossOrigin="anonymous"
+              loading="lazy"
+            />
           </div>
         ))}
       </section>
