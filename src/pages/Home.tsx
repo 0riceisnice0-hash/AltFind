@@ -1,29 +1,25 @@
 import React from 'react';
 import { SearchBar } from '../components/SearchBar';
-import { Badge } from '../components/ui/Badge';
-import { Button } from '../components/ui/Button';
 import './Home.css';
 
 export const Home: React.FC = () => {
-  const exampleQueries = [
-    'black puffer jacket',
-    'black zip hoodie',
-    'grey cargo trousers',
-    'white trainers',
-    'brown leather boots',
+  const fashionImages = [
+    { url: 'https://source.unsplash.com/400x600/?fashion,editorial', alt: 'Fashion editorial 1' },
+    { url: 'https://source.unsplash.com/400x700/?streetwear,fashion', alt: 'Streetwear fashion 2' },
+    { url: 'https://source.unsplash.com/400x550/?avant-garde,fashion', alt: 'Avant-garde fashion 3' },
+    { url: 'https://source.unsplash.com/400x650/?minimal,fashion', alt: 'Minimal fashion 4' },
+    { url: 'https://source.unsplash.com/400x600/?fashion,model', alt: 'Fashion model 5' },
+    { url: 'https://source.unsplash.com/400x700/?fashion,photography', alt: 'Fashion photography 6' },
+    { url: 'https://source.unsplash.com/400x550/?fashion,style', alt: 'Fashion style 7' },
+    { url: 'https://source.unsplash.com/400x650/?fashion,lookbook', alt: 'Fashion lookbook 8' },
+    { url: 'https://source.unsplash.com/400x600/?fashion,runway', alt: 'Fashion runway 9' },
+    { url: 'https://source.unsplash.com/400x700/?fashion,chic', alt: 'Fashion chic 10' },
+    { url: 'https://source.unsplash.com/400x550/?fashion,designer', alt: 'Fashion designer 11' },
+    { url: 'https://source.unsplash.com/400x650/?fashion,couture', alt: 'Fashion couture 12' },
+    { url: 'https://source.unsplash.com/400x600/?fashion,vogue', alt: 'Fashion vogue 13' },
+    { url: 'https://source.unsplash.com/400x700/?fashion,aesthetic', alt: 'Fashion aesthetic 14' },
+    { url: 'https://source.unsplash.com/400x550/?fashion,minimalist', alt: 'Fashion minimalist 15' },
   ];
-
-  const handleExampleClick = (query: string) => {
-    const searchInput = document.querySelector<HTMLInputElement>('.search-bar input');
-    if (searchInput) {
-      searchInput.value = query;
-      searchInput.focus();
-    }
-  };
-
-  const scrollToSearch = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
 
   return (
     <div className="home">
@@ -32,75 +28,21 @@ export const Home: React.FC = () => {
         <div className="home__hero-content">
           <h1 className="home__hero-title">Find similar clothes for less</h1>
           <p className="home__hero-subtitle">
-            Paste a product link or type what you're looking for. AltFind shows visually 
-            similar picks at lower prices.
+            Discover alternatives. Pay less.
           </p>
           <div className="home__search">
             <SearchBar />
           </div>
-          <div className="home__examples">
-            <span className="home__examples-label">Try:</span>
-            {exampleQueries.map((query, index) => (
-              <Badge 
-                key={index}
-                variant="default"
-                onClick={() => handleExampleClick(query)}
-                style={{ cursor: 'pointer' }}
-              >
-                {query}
-              </Badge>
-            ))}
-          </div>
         </div>
       </section>
 
-      {/* Trust Strip */}
-      <section className="home__trust">
-        <div className="home__trust-item">
-          <div className="home__trust-icon">🔍</div>
-          <h3 className="home__trust-title">Visual similarity matching</h3>
-          <p className="home__trust-text">Find items that look alike</p>
-        </div>
-        <div className="home__trust-item">
-          <div className="home__trust-icon">💰</div>
-          <h3 className="home__trust-title">Cheaper alternatives</h3>
-          <p className="home__trust-text">Save on similar styles</p>
-        </div>
-        <div className="home__trust-item">
-          <div className="home__trust-icon">🏪</div>
-          <h3 className="home__trust-title">Links to trusted retailers</h3>
-          <p className="home__trust-text">Shop with confidence</p>
-        </div>
-      </section>
-
-      {/* How It Works Preview */}
-      <section className="home__how-it-works">
-        <h2 className="home__section-title">How it works</h2>
-        <div className="home__steps">
-          <div className="home__step">
-            <div className="home__step-number">1</div>
-            <h3 className="home__step-title">Search or paste a link</h3>
-            <p className="home__step-text">Enter what you're looking for or paste a product URL</p>
+      {/* Fashion Gallery Section */}
+      <section className="home__gallery">
+        {fashionImages.map((image, index) => (
+          <div key={index} className="home__gallery-item">
+            <img src={image.url} alt={image.alt} />
           </div>
-          <div className="home__step">
-            <div className="home__step-number">2</div>
-            <h3 className="home__step-title">We find similar options</h3>
-            <p className="home__step-text">Our algorithm matches style and finds alternatives</p>
-          </div>
-          <div className="home__step">
-            <div className="home__step-number">3</div>
-            <h3 className="home__step-title">You choose the best price</h3>
-            <p className="home__step-text">Compare and pick the deal that works for you</p>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Block */}
-      <section className="home__cta">
-        <h2 className="home__cta-title">Ready to try it?</h2>
-        <Button size="large" onClick={scrollToSearch}>
-          Start searching
-        </Button>
+        ))}
       </section>
     </div>
   );
