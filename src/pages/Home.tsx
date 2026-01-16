@@ -38,8 +38,8 @@ export const Home: React.FC = () => {
 
       {/* Fashion Gallery Section */}
       <section className="home__gallery">
-        {fashionImages.map((image, index) => (
-          <div key={index} className="home__gallery-item">
+        {fashionImages.map((image) => (
+          <div key={image.url} className="home__gallery-item">
             <img src={image.url} alt={image.alt} />
           </div>
         ))}
