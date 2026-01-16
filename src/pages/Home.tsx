@@ -145,10 +145,7 @@ export const Home: React.FC = () => {
               style={{
                 width: '100%',
                 height: 'auto',
-                backgroundColor: 'rgb(235, 231, 224)',
-                maxHeight: '175px',
-                maxWidth: '120px',
-                objectFit: 'cover'
+                backgroundColor: 'rgb(235, 231, 224)'
               }}
               className="home__gallery-image"
             />
