@@ -20,7 +20,7 @@
 }
 
 .home__hero-title {
-  font-family: var(--font-heading);
+  font-family: var(--font-heading), 'Georgia', serif;
   font-size: 5rem;
   font-weight: 900;
   color: #F5F3F0;
