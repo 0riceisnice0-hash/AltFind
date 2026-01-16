@@ -84,6 +84,12 @@ The project is configured for automatic deployment to GitHub Pages using GitHub 
 
 The site will be available at: `https://[username].github.io/AltFind/`
 
+**Key Configuration Details:**
+- The project uses HashRouter for GitHub Pages compatibility (no server-side routing needed)
+- Base path is set to `/AltFind/` in `vite.config.ts`
+- `.nojekyll` file is included to prevent Jekyll processing
+- GitHub Actions workflow automatically builds and deploys on push to `main`
+
 ### Manual Deployment
 
 If you prefer manual deployment:
