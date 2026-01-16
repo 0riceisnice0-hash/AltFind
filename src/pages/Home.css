@@ -2,31 +2,40 @@
   width: 100%;
 }
 
-/* Hero Section */
+/* Hero Section - Full viewport with bold gradient */
 .home__hero {
-  padding: 4rem 1.5rem;
-  text-align: center;
-  background: linear-gradient(to bottom, #f9fafb, white);
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1.5rem;
+  background: linear-gradient(135deg, #4A1942 0%, #2D2D2D 100%);
+  position: relative;
 }
 
 .home__hero-content {
   max-width: 900px;
-  margin: 0 auto;
+  width: 100%;
+  text-align: center;
 }
 
 .home__hero-title {
-  font-size: 3rem;
-  font-weight: 700;
-  color: #1f2937;
+  font-family: var(--font-heading);
+  font-size: 5rem;
+  font-weight: 900;
+  color: #F5F3F0;
   margin: 0 0 1.5rem;
-  line-height: 1.2;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
 }
 
 .home__hero-subtitle {
-  font-size: 1.25rem;
-  color: #6b7280;
-  margin: 0 0 2.5rem;
-  line-height: 1.6;
+  font-family: var(--font-body);
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #D4C5A9;
+  margin: 0 0 3rem;
+  line-height: 1.4;
 }
 
 .home__search {
@@ -43,114 +52,78 @@
 
 .home__examples-label {
   font-weight: 500;
-  color: #6b7280;
-  font-size: 0.875rem;
+  color: #D4C5A9;
+  font-size: 0.95rem;
 }
 
-/* Trust Strip */
-.home__trust {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 4rem 1.5rem;
+/* Fashion Gallery Section - Asymmetric grid */
+.home__gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 0;
+  width: 100%;
+  background-color: #1C1C1C;
 }
 
-.home__trust-item {
-  text-align: center;
+.home__gallery-item {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 2/3;
+  transition: transform 0.3s ease;
 }
 
-.home__trust-icon {
-  font-size: 3rem;
-  margin-bottom: 1rem;
+.home__gallery-item:hover {
+  transform: scale(1.02);
+  z-index: 1;
 }
 
-.home__trust-title {
-  font-size: 1.125rem;
-  font-weight: 600;
-  color: #1f2937;
-  margin: 0 0 0.5rem;
+.home__gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
-.home__trust-text {
-  font-size: 0.875rem;
-  color: #6b7280;
-  margin: 0;
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .home__hero-title {
+    font-size: 3.5rem;
+  }
+
+  .home__hero-subtitle {
+    font-size: 1.25rem;
+  }
+
+  .home__gallery {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
 }
 
-/* How It Works Preview */
-.home__how-it-works {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 4rem 1.5rem;
-  background-color: #f9fafb;
-  border-radius: 12px;
-}
-
-.home__section-title {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #1f2937;
-  text-align: center;
-  margin: 0 0 3rem;
-}
-
-.home__steps {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-}
-
-.home__step {
-  text-align: center;
-}
-
-.home__step-number {
-  width: 3rem;
-  height: 3rem;
-  background-color: #2563eb;
-  color: white;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin: 0 auto 1rem;
-}
-
-.home__step-title {
-  font-size: 1.125rem;
-  font-weight: 600;
-  color: #1f2937;
-  margin: 0 0 0.5rem;
-}
-
-.home__step-text {
-  font-size: 0.875rem;
-  color: #6b7280;
-  margin: 0;
-  line-height: 1.6;
-}
-
-/* CTA Block */
-.home__cta {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 4rem 1.5rem;
-  text-align: center;
-}
-
-.home__cta-title {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #1f2937;
-  margin: 0 0 1.5rem;
-}
-
-/* Responsive */
 @media (max-width: 768px) {
+  .home__hero {
+    min-height: 80vh;
+    padding: 1.5rem 1rem;
+  }
+
+  .home__hero-title {
+    font-size: 2.5rem;
+  }
+
+  .home__hero-subtitle {
+    font-size: 1.1rem;
+    margin: 0 0 2rem;
+  }
+
+  .home__search {
+    margin-bottom: 1.5rem;
+  }
+
+  .home__gallery {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
   .home__hero-title {
     font-size: 2rem;
   }
@@ -159,13 +132,7 @@
     font-size: 1rem;
   }
 
-  .home__section-title {
-    font-size: 1.5rem;
-  }
-
-  .home__trust,
-  .home__steps {
-    grid-template-columns: 1fr;
-    gap: 2rem;
+  .home__gallery {
+    grid-template-columns: repeat(2, 1fr);
   }
 }

@@ -1,10 +1,10 @@
 .header {
   position: sticky;
   top: 0;
-  background-color: white;
-  border-bottom: 1px solid #e5e7eb;
+  background-color: #1C1C1C;
+  border-bottom: 1px solid #2D2D2D;
   z-index: 50;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .header__container {
@@ -18,15 +18,16 @@
 }
 
 .header__logo {
+  font-family: var(--font-heading);
   font-size: 1.5rem;
   font-weight: 700;
-  color: #1f2937;
+  color: #F5F3F0;
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
 .header__logo:hover {
-  color: #2563eb;
+  color: #D4C5A9;
 }
 
 .header__nav {
@@ -37,7 +38,7 @@
 }
 
 .header__link {
-  color: #4b5563;
+  color: #D4C5A9;
   text-decoration: none;
   font-weight: 500;
   transition: color 0.2s ease;
@@ -45,7 +46,7 @@
 }
 
 .header__link:hover {
-  color: #1f2937;
+  color: #F5F3F0;
 }
 
 .header__cta {

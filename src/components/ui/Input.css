@@ -13,18 +13,19 @@
 
 .input {
   font-family: inherit;
-  font-size: 1rem;
-  padding: 0.75rem 1rem;
-  border: 1px solid #d1d5db;
-  border-radius: 6px;
+  font-size: 1.2rem;
+  padding: 1rem 1.5rem;
+  border: 2px solid #D4C5A9;
+  border-radius: 8px;
   outline: none;
   transition: all 0.2s ease;
   width: 100%;
+  background-color: rgba(245, 243, 240, 0.95);
 }
 
 .input:focus {
-  border-color: #2563eb;
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+  border-color: #6B2D5C;
+  box-shadow: 0 0 0 3px rgba(106, 45, 92, 0.1);
 }
 
 .input--error {
