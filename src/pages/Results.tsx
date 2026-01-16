@@ -24,8 +24,13 @@ export const Results: React.FC = () => {
   const displayedResults = allResults.slice(0, displayCount);
   const hasMore = displayCount < allResults.length;
 
+  // Reset display count when query or filters change
+  // Use layout effect to avoid visual jank
   useEffect(() => {
-    setDisplayCount(12);
+    const timeoutId = setTimeout(() => {
+      setDisplayCount(12);
+    }, 0);
+    return () => clearTimeout(timeoutId);
   }, [query, filters]);
 
   const handleLoadMore = () => {
