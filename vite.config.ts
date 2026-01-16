@@ -1,8 +1,11 @@
-import { defineConfig } from 'vite';
-import vue from '@vitejs/plugin-vue';
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
 
-// https://vitejs.dev/config/
+// https://vite.dev/config/
 export default defineConfig({
-  plugins: [vue()],
-  base: '/', // Changed from '/AltFind/' back to '/' for custom domain
-});
+  plugins: [react()],
+  base: '/',
+  build: {
+    outDir: 'dist',
+  },
+})
