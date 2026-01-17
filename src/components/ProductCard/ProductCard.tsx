@@ -28,6 +28,11 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           alt={product.title}
           className="product-card__image"
         />
+        {product.commission && (
+          <span className="product-card__commission">
+            {product.commission}% commission
+          </span>
+        )}
         <button 
           className={`product-card__save ${isSaved ? 'product-card__save--active' : ''}`}
           onClick={handleSave}

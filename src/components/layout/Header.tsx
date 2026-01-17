@@ -22,9 +22,10 @@ export const Header: React.FC = () => {
         </Link>
         <nav className="header__nav">
           <Link to="/" className="header__link">Home</Link>
-          <Link to="/how-it-works" className="header__link">How it works</Link>
-          <Link to="/about" className="header__link">About</Link>
-          <Link to="/legal" className="header__link">Legal</Link>
+          <Link to="/discover" className="header__link">Discover</Link>
+          <Link to="/search" className="header__link">Search</Link>
+          <Link to="/contact" className="header__link">Contact</Link>
+          <Link to="/affiliate" className="header__link">Affiliate</Link>
         </nav>
         <Button onClick={handleTrySearch} size="small" className="header__cta">
           Try search

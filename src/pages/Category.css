@@ -1,0 +1,130 @@
+.category {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #FAFAFA;
+}
+
+/* Hero Section */
+.category__hero {
+  background: linear-gradient(135deg, #1C1C1C 0%, #2D2D2D 100%);
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.category__hero-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.category__hero-title {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  font-weight: 700;
+  color: #F5F3F0;
+  margin: 0 0 1rem;
+  letter-spacing: -0.02em;
+}
+
+.category__hero-subtitle {
+  font-size: 1.25rem;
+  color: #D4C5A9;
+  margin: 0;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+/* Products Section */
+.category__products {
+  padding: 4rem 2rem;
+}
+
+.category__container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.category__stats {
+  margin-bottom: 2rem;
+}
+
+.category__count {
+  font-size: 1rem;
+  color: #6b7280;
+  margin: 0;
+}
+
+.category__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+/* Empty State */
+.category__empty {
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.category__empty-text {
+  font-size: 1.25rem;
+  color: #6b7280;
+  margin: 0 0 2rem;
+}
+
+.category__back-button {
+  padding: 0.875rem 2rem;
+  background-color: #4A1942;
+  color: #F5F3F0;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.category__back-button:hover {
+  background-color: #6B2D5C;
+  transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .category__hero-title {
+    font-size: 2.5rem;
+  }
+
+  .category__grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .category__hero {
+    padding: 3rem 1.5rem;
+  }
+
+  .category__hero-title {
+    font-size: 2rem;
+  }
+
+  .category__hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .category__products {
+    padding: 3rem 1.5rem;
+  }
+
+  .category__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .category__hero-title {
+    font-size: 1.75rem;
+  }
+}

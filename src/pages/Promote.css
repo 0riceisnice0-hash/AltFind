@@ -1,0 +1,236 @@
+.promote {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #FAFAFA;
+  padding: 3rem 2rem;
+}
+
+.promote__container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.promote__title {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  font-weight: 700;
+  color: #1C1C1C;
+  margin: 0 0 0.75rem;
+  text-align: center;
+  letter-spacing: -0.02em;
+}
+
+.promote__subtitle {
+  font-size: 1.25rem;
+  color: #6b7280;
+  margin: 0 0 3rem;
+  text-align: center;
+}
+
+/* Product Preview */
+.promote__preview {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.promote__preview-card {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.promote__preview-image {
+  width: 200px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.promote__preview-info {
+  flex: 1;
+}
+
+.promote__preview-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1C1C1C;
+  margin: 0 0 0.5rem;
+}
+
+.promote__preview-retailer {
+  font-size: 1rem;
+  color: #6b7280;
+  margin: 0 0 0.5rem;
+}
+
+.promote__preview-price {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #4A1942;
+  margin: 0 0 1rem;
+}
+
+.promote__preview-commission {
+  background-color: #4A1942;
+  color: #F5F3F0;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  display: inline-block;
+}
+
+/* Section Styles */
+.promote__section {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.promote__section-title {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1C1C1C;
+  margin: 0 0 1.5rem;
+}
+
+/* Link Box */
+.promote__link-box {
+  display: flex;
+  gap: 1rem;
+}
+
+.promote__link-input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: monospace;
+  background-color: #f9fafb;
+}
+
+.promote__copy-button {
+  white-space: nowrap;
+}
+
+/* Share Buttons */
+.promote__share-buttons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+}
+
+.promote__share-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  color: white;
+}
+
+.promote__share-icon {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.promote__share-button--twitter {
+  background-color: #000000;
+}
+
+.promote__share-button--twitter:hover {
+  background-color: #1a1a1a;
+}
+
+.promote__share-button--facebook {
+  background-color: #1877F2;
+}
+
+.promote__share-button--facebook:hover {
+  background-color: #0d5fcc;
+}
+
+.promote__share-button--pinterest {
+  background-color: #E60023;
+}
+
+.promote__share-button--pinterest:hover {
+  background-color: #c60019;
+}
+
+.promote__share-button--email {
+  background-color: #6b7280;
+}
+
+.promote__share-button--email:hover {
+  background-color: #4b5563;
+}
+
+/* Caption Box */
+.promote__caption-box {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.promote__caption-textarea {
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: inherit;
+  resize: vertical;
+  background-color: #f9fafb;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .promote {
+    padding: 2rem 1.5rem;
+  }
+
+  .promote__title {
+    font-size: 2rem;
+  }
+
+  .promote__subtitle {
+    font-size: 1rem;
+  }
+
+  .promote__preview-card {
+    flex-direction: column;
+  }
+
+  .promote__preview-image {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .promote__link-box {
+    flex-direction: column;
+  }
+
+  .promote__share-buttons {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .promote__title {
+    font-size: 1.75rem;
+  }
+}

@@ -1,0 +1,129 @@
+.search {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #FAFAFA;
+}
+
+/* Search Header */
+.search__header {
+  background: linear-gradient(135deg, #1C1C1C 0%, #2D2D2D 100%);
+  padding: 3rem 2rem;
+}
+
+.search__header-content {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.search__title {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  font-weight: 700;
+  color: #F5F3F0;
+  margin: 0 0 0.75rem;
+  letter-spacing: -0.02em;
+}
+
+.search__subtitle {
+  font-size: 1.125rem;
+  color: #D4C5A9;
+  margin: 0 0 2rem;
+}
+
+.search__bar {
+  margin: 0 auto;
+  max-width: 700px;
+}
+
+/* Section Styles */
+.search__section {
+  padding: 3rem 2rem;
+}
+
+.search__section--alt {
+  background-color: #FFFFFF;
+}
+
+.search__container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.search__section-title {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1C1C1C;
+  margin: 0 0 1.5rem;
+  letter-spacing: -0.01em;
+}
+
+.search__results-count {
+  font-size: 1rem;
+  color: #6b7280;
+  margin: 0 0 2rem;
+}
+
+/* Badges Container */
+.search__badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+/* Product Grid */
+.search__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .search__title {
+    font-size: 2.5rem;
+  }
+
+  .search__grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .search__header {
+    padding: 2rem 1.5rem;
+  }
+
+  .search__title {
+    font-size: 2rem;
+  }
+
+  .search__subtitle {
+    font-size: 1rem;
+  }
+
+  .search__section {
+    padding: 2rem 1.5rem;
+  }
+
+  .search__section-title {
+    font-size: 1.5rem;
+  }
+
+  .search__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .search__title {
+    font-size: 1.75rem;
+  }
+
+  .search__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

@@ -48,6 +48,19 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+.product-card__commission {
+  position: absolute;
+  bottom: 0.75rem;
+  left: 0.75rem;
+  background-color: #4A1942;
+  color: #F5F3F0;
+  padding: 0.375rem 0.75rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
 .product-card__save:hover {
   transform: scale(1.1);
 }
