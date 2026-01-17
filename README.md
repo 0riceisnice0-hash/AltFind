@@ -181,6 +181,34 @@ To change the accent color, update the primary button color in `src/components/u
 - `npm run build` - Build for production
 - `npm run preview` - Preview production build locally
 - `npm run lint` - Run ESLint
+- `npm run ingest:dhgate` - Run DHgate CSV ingestion script
+
+## 🔐 Supabase Configuration
+
+### Required GitHub Secrets
+
+For automated deployment via GitHub Actions, configure these secrets in your repository:
+
+- `SUPABASE_ACCESS_TOKEN` - Supabase access token for CLI
+- `SUPABASE_PROJECT_REF` - Your Supabase project reference ID
+- `SUPABASE_DB_PASSWORD` - Database password for migrations
+
+### Required Supabase Edge Function Secret
+
+In your Supabase project dashboard, set the following secret for the Edge Function:
+
+- `SUPABASE_SERVICE_ROLE_KEY` - Service role key for database access
+
+### Local Development
+
+For running the CSV ingestion script locally:
+
+1. Copy `.env.example` to `.env`
+2. Add your `SUPABASE_SERVICE_ROLE_KEY` to `.env`
+3. Place your DHgate CSV file in the `data/` directory
+4. Run: `npm run ingest:dhgate`
+
+**Security Note**: Never commit the `.env` file or service role keys to the repository.
 
 ## 📱 Browser Support
 
@@ -203,4 +231,4 @@ For questions or feedback, please open an issue on GitHub.
 
 ---
 
-**Note**: This is a demonstration project using mock data. In a production environment, you would integrate with real product APIs and implement proper backend services for search and data management.
+**Note**: This project integrates with Supabase for product search and data management. The frontend uses the public Supabase anon key, while the Edge Functions and ingestion scripts use the service role key for secure database access.
