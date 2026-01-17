@@ -4,8 +4,17 @@ import './About.css';
 export const About: React.FC = () => {
   return (
     <div className="about">
+      {/* Hero Section */}
+      <section className="about__hero">
+        <div className="about__hero-content">
+          <h1 className="about__hero-title">About AltFindr</h1>
+          <p className="about__hero-subtitle">
+            Making great fashion accessible to everyone
+          </p>
+        </div>
+      </section>
+
       <div className="about__container">
-        <h1 className="about__title">About AltFindr</h1>
         
         <div className="about__content">
           <p className="about__text">

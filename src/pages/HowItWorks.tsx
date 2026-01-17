@@ -4,8 +4,17 @@ import './HowItWorks.css';
 export const HowItWorks: React.FC = () => {
   return (
     <div className="how-it-works">
+      {/* Hero Section */}
+      <section className="how-it-works__hero">
+        <div className="how-it-works__hero-content">
+          <h1 className="how-it-works__hero-title">How it works</h1>
+          <p className="how-it-works__hero-subtitle">
+            Discover similar fashion at better prices in three simple steps
+          </p>
+        </div>
+      </section>
+
       <div className="how-it-works__container">
-        <h1 className="how-it-works__title">How it works</h1>
         
         <section className="how-it-works__steps">
           <div className="how-it-works__step">

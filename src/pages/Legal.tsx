@@ -4,8 +4,17 @@ import './Legal.css';
 export const Legal: React.FC = () => {
   return (
     <div className="legal">
+      {/* Hero Section */}
+      <section className="legal__hero">
+        <div className="legal__hero-content">
+          <h1 className="legal__hero-title">Legal</h1>
+          <p className="legal__hero-subtitle">
+            Privacy, terms, and transparency
+          </p>
+        </div>
+      </section>
+
       <div className="legal__container">
-        <h1 className="legal__title">Legal</h1>
 
         <section className="legal__section">
           <h2 className="legal__section-title">Privacy Policy</h2>
