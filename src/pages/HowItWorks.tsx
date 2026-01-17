@@ -59,7 +59,7 @@ export const HowItWorks: React.FC = () => {
           <div className="how-it-works__faq-item">
             <h3 className="how-it-works__faq-question">Do you sell products?</h3>
             <p className="how-it-works__faq-answer">
-              No, we don't sell anything directly. AltFind is a discovery and comparison platform. 
+              No, we don't sell anything directly. AltFindr is a discovery and comparison platform. 
               When you click "View deal", we'll take you directly to the retailer's website where 
               you can make your purchase.
             </p>

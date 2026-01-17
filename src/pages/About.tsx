@@ -5,11 +5,11 @@ export const About: React.FC = () => {
   return (
     <div className="about">
       <div className="about__container">
-        <h1 className="about__title">About AltFind</h1>
+        <h1 className="about__title">About AltFindr</h1>
         
         <div className="about__content">
           <p className="about__text">
-            AltFind was created to help people find the style they love at prices that work for them. 
+            AltFindr was created to help people find the style they love at prices that work for them. 
             We believe that great fashion shouldn't break the bank, and that there are often similar 
             alternatives out there if you know where to look.
           </p>
@@ -18,7 +18,7 @@ export const About: React.FC = () => {
             Our platform aggregates products from multiple trusted retailers and uses visual similarity 
             matching to surface alternatives that look alike but cost less. Whether you've found 
             something you like on a premium brand's website or you're just browsing for inspiration, 
-            AltFind helps you discover budget-friendly options without compromising on style.
+            AltFindr helps you discover budget-friendly options without compromising on style.
           </p>
 
           <p className="about__text">

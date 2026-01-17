@@ -1,8 +1,8 @@
-# AltFind
+# AltFindr
 
 **Similar style. Lower price.**
 
-AltFind is a fashion similarity search web app that helps you find visually similar clothing items from multiple retailers at lower prices.
+AltFindr is a fashion similarity search web app that helps you find visually similar clothing items from multiple retailers at lower prices.
 
 ## 🚀 Live Demo
 
@@ -102,7 +102,7 @@ npm run build
 ## 📝 Project Structure
 
 ```
-AltFind/
+AltFindr/
 ├── src/
 │   ├── components/         # Reusable components
 │   │   ├── ui/            # UI primitives (Button, Input, Select, Badge)
