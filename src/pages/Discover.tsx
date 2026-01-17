@@ -5,21 +5,40 @@ import { mockProducts } from '../data/mockProducts';
 import './Discover.css';
 
 export const Discover: React.FC = () => {
-  // Get products with highest commissions
-  const topCommissionProducts = [...mockProducts]
-    .sort((a, b) => (b.commission || 0) - (a.commission || 0))
-    .slice(0, 8);
-
-  // Get popular products (first 8)
-  const popularProducts = mockProducts.slice(0, 8);
+  // Get popular products
+  const popularProducts = mockProducts.slice(0, 12);
 
   const categories = [
-    { name: 'Watches', slug: 'watches', emoji: '⌚' },
-    { name: 'Hoodies', slug: 'hoodies', emoji: '👕' },
-    { name: 'Sneakers', slug: 'sneakers', emoji: '👟' },
-    { name: 'Jackets', slug: 'jackets', emoji: '🧥' },
-    { name: 'Accessories', slug: 'accessories', emoji: '🕶️' },
-    { name: 'Bags', slug: 'bags', emoji: '👜' },
+    { 
+      name: 'Mountaineering / Outdoor', 
+      slug: 'outdoor',
+      image: 'https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=800&q=80',
+      description: 'Gear for adventure seekers'
+    },
+    { 
+      name: 'Streetwear', 
+      slug: 'streetwear',
+      image: 'https://images.unsplash.com/photo-1525562723836-dca67a71d5f1?auto=format&fit=crop&w=800&q=80',
+      description: 'Urban fashion essentials'
+    },
+    { 
+      name: 'Workwear', 
+      slug: 'workwear',
+      image: 'https://images.unsplash.com/photo-1593030761757-71fae45fa0e7?auto=format&fit=crop&w=800&q=80',
+      description: 'Professional attire'
+    },
+    { 
+      name: 'Tech Accessories', 
+      slug: 'tech',
+      image: 'https://images.unsplash.com/photo-1572635196237-14b3f281503f?auto=format&fit=crop&w=800&q=80',
+      description: 'Gadgets and accessories'
+    },
+    { 
+      name: 'Fitness', 
+      slug: 'fitness',
+      image: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=800&q=80',
+      description: 'Workout gear and apparel'
+    },
   ];
 
   return (
@@ -27,61 +46,19 @@ export const Discover: React.FC = () => {
       {/* Hero Section */}
       <section className="discover__hero">
         <div className="discover__hero-content">
-          <h1 className="discover__hero-title">Discover Products to Promote</h1>
+          <h1 className="discover__hero-title">Discover Products</h1>
           <p className="discover__hero-subtitle">
-            Browse our curated collection of products with great commission rates
+            Browse our curated collection of quality products
           </p>
-        </div>
-      </section>
-
-      {/* Popular Products Section */}
-      <section className="discover__section">
-        <div className="discover__section-header">
-          <h2 className="discover__section-title">Popular Products</h2>
-          <p className="discover__section-subtitle">
-            Trending items that affiliates love to promote
-          </p>
-        </div>
-        <div className="discover__grid">
-          {popularProducts.map((product) => (
-            <Link 
-              key={product.id} 
-              to={`/product/${product.id}`}
-              style={{ textDecoration: 'none', color: 'inherit' }}
-            >
-              <ProductCard product={product} />
-            </Link>
-          ))}
-        </div>
-      </section>
-
-      {/* Top Commission Section */}
-      <section className="discover__section discover__section--alt">
-        <div className="discover__section-header">
-          <h2 className="discover__section-title">Top Commission</h2>
-          <p className="discover__section-subtitle">
-            Maximize your earnings with these high-commission products
-          </p>
-        </div>
-        <div className="discover__grid">
-          {topCommissionProducts.map((product) => (
-            <Link 
-              key={product.id} 
-              to={`/product/${product.id}`}
-              style={{ textDecoration: 'none', color: 'inherit' }}
-            >
-              <ProductCard product={product} />
-            </Link>
-          ))}
         </div>
       </section>
 
       {/* Categories Section */}
       <section className="discover__section">
         <div className="discover__section-header">
-          <h2 className="discover__section-title">Browse by Category</h2>
+          <h2 className="discover__section-title">Shop by Category</h2>
           <p className="discover__section-subtitle">
-            Find the perfect products for your audience
+            Find the perfect products for your style
           </p>
         </div>
         <div className="discover__categories">
@@ -91,8 +68,35 @@ export const Discover: React.FC = () => {
               to={`/category/${category.slug}`}
               className="discover__category-card"
             >
-              <span className="discover__category-emoji">{category.emoji}</span>
-              <h3 className="discover__category-title">Best {category.name} to Promote</h3>
+              <div 
+                className="discover__category-image"
+                style={{ backgroundImage: `url(${category.image})` }}
+              />
+              <div className="discover__category-content">
+                <h3 className="discover__category-title">{category.name}</h3>
+                <p className="discover__category-description">{category.description}</p>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* Popular Products Section */}
+      <section className="discover__section discover__section--alt">
+        <div className="discover__section-header">
+          <h2 className="discover__section-title">Popular Products</h2>
+          <p className="discover__section-subtitle">
+            Trending items shoppers love
+          </p>
+        </div>
+        <div className="discover__grid">
+          {popularProducts.map((product) => (
+            <Link 
+              key={product.id} 
+              to={`/product/${product.id}`}
+              style={{ textDecoration: 'none', color: 'inherit' }}
+            >
+              <ProductCard product={product} showCommission={false} />
             </Link>
           ))}
         </div>

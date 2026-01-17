@@ -8,16 +8,11 @@ import { mockProducts } from '../data/mockProducts';
 import './Home.css';
 
 export const Home: React.FC = () => {
-  // Get recent products (first 4)
-  const recentFinds = mockProducts.slice(0, 4);
+  // Get recently viewed products (placeholder - would be from localStorage in real implementation)
+  const recentlyViewed = mockProducts.slice(0, 4);
   
-  // Get popular products (next 8)
-  const popularProducts = mockProducts.slice(4, 12);
-  
-  // Get top commission products
-  const topCommissionProducts = [...mockProducts]
-    .sort((a, b) => (b.commission || 0) - (a.commission || 0))
-    .slice(0, 8);
+  // Get popular products
+  const popularProducts = mockProducts.slice(4, 16);
 
   const fashionImages = [
     { 
@@ -150,42 +145,38 @@ export const Home: React.FC = () => {
       <section className="home__navigation">
         <div className="home__navigation-content">
           <Link to="/discover" className="home__nav-card">
-            <span className="home__nav-icon">🔍</span>
             <h3 className="home__nav-title">Discover</h3>
-            <p className="home__nav-text">Browse products to promote</p>
+            <p className="home__nav-text">Browse by category</p>
           </Link>
           <Link to="/search" className="home__nav-card">
-            <span className="home__nav-icon">🔎</span>
             <h3 className="home__nav-title">Search</h3>
             <p className="home__nav-text">Find specific products</p>
           </Link>
-          <Link to="/promote/jkt-001" className="home__nav-card">
-            <span className="home__nav-icon">🚀</span>
-            <h3 className="home__nav-title">Promote</h3>
-            <p className="home__nav-text">Share and earn commission</p>
+          <Link to="/cart" className="home__nav-card">
+            <h3 className="home__nav-title">Cart</h3>
+            <p className="home__nav-text">View your selections</p>
           </Link>
           <Link to="/contact" className="home__nav-card">
-            <span className="home__nav-icon">💬</span>
             <h3 className="home__nav-title">Contact</h3>
-            <p className="home__nav-text">Get in touch with us</p>
+            <p className="home__nav-text">Get in touch</p>
           </Link>
         </div>
       </section>
 
-      {/* Recent Finds Section */}
+      {/* Recently Viewed Section */}
       <section className="home__section">
         <div className="home__section-header">
-          <h2 className="home__section-title">Recent Finds</h2>
-          <p className="home__section-subtitle">Latest additions to our catalog</p>
+          <h2 className="home__section-title">Recently Viewed</h2>
+          <p className="home__section-subtitle">Pick up where you left off</p>
         </div>
         <div className="home__products-grid">
-          {recentFinds.map((product) => (
+          {recentlyViewed.map((product) => (
             <Link 
               key={product.id} 
               to={`/product/${product.id}`}
               style={{ textDecoration: 'none', color: 'inherit' }}
             >
-              <ProductCard product={product} />
+              <ProductCard product={product} showCommission={false} />
             </Link>
           ))}
         </div>
@@ -195,7 +186,7 @@ export const Home: React.FC = () => {
       <section className="home__section home__section--alt">
         <div className="home__section-header">
           <h2 className="home__section-title">Popular Products</h2>
-          <p className="home__section-subtitle">Trending items affiliates love</p>
+          <p className="home__section-subtitle">Trending items shoppers love</p>
         </div>
         <div className="home__products-grid">
           {popularProducts.map((product) => (
@@ -204,26 +195,7 @@ export const Home: React.FC = () => {
               to={`/product/${product.id}`}
               style={{ textDecoration: 'none', color: 'inherit' }}
             >
-              <ProductCard product={product} />
-            </Link>
-          ))}
-        </div>
-      </section>
-
-      {/* Top Commission Section */}
-      <section className="home__section">
-        <div className="home__section-header">
-          <h2 className="home__section-title">Top Commission</h2>
-          <p className="home__section-subtitle">Maximize your earnings</p>
-        </div>
-        <div className="home__products-grid">
-          {topCommissionProducts.map((product) => (
-            <Link 
-              key={product.id} 
-              to={`/product/${product.id}`}
-              style={{ textDecoration: 'none', color: 'inherit' }}
-            >
-              <ProductCard product={product} />
+              <ProductCard product={product} showCommission={false} />
             </Link>
           ))}
         </div>
