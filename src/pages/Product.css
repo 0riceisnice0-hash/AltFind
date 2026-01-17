@@ -76,37 +76,20 @@
   margin: 0;
 }
 
-/* Commission Section */
-.product__commission {
-  background: linear-gradient(135deg, #4A1942 0%, #6B2D5C 100%);
-  padding: 1.5rem;
-  border-radius: 8px;
-  margin-top: 1rem;
-}
-
-.product__commission-badge {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #F5F3F0;
-  margin-bottom: 0.5rem;
-}
-
-.product__commission-text {
-  font-size: 1rem;
-  color: #E8DCC4;
-  margin: 0;
-}
-
 /* Action Buttons */
 .product__actions {
   display: flex;
-  flex-direction: column;
   gap: 1rem;
-  margin-top: 1rem;
+  margin-top: 2rem;
 }
 
 .product__action-button {
-  width: 100%;
+  flex: 1;
+}
+
+.product__promote-link {
+  flex: 1;
+  text-decoration: none;
 }
 
 /* Related Products */
@@ -162,6 +145,10 @@
 
   .product__price {
     font-size: 1.75rem;
+  }
+
+  .product__actions {
+    flex-direction: column;
   }
 
   .product__related-grid {

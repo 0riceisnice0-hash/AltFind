@@ -17,7 +17,7 @@ export const Search: React.FC = () => {
     'cargo trousers',
   ];
 
-  const recentViews = mockProducts.slice(0, 4);
+  const recentlyViewed = mockProducts.slice(0, 4);
 
   return (
     <div className="search">
@@ -26,7 +26,7 @@ export const Search: React.FC = () => {
         <div className="search__header-content">
           <h1 className="search__title">Search Products</h1>
           <p className="search__subtitle">
-            Find the perfect products to promote
+            Find exactly what you're looking for
           </p>
           <div className="search__bar">
             <SearchBar />
@@ -52,18 +52,18 @@ export const Search: React.FC = () => {
         </div>
       </section>
 
-      {/* Recent Views */}
+      {/* Recently Viewed */}
       <section className="search__section search__section--alt">
         <div className="search__container">
-          <h2 className="search__section-title">Recent Views</h2>
+          <h2 className="search__section-title">Recently Viewed</h2>
           <div className="search__grid">
-            {recentViews.map((product) => (
+            {recentlyViewed.map((product) => (
               <Link 
                 key={product.id} 
                 to={`/product/${product.id}`}
                 style={{ textDecoration: 'none', color: 'inherit' }}
               >
-                <ProductCard product={product} />
+                <ProductCard product={product} showCommission={false} />
               </Link>
             ))}
           </div>
@@ -84,7 +84,7 @@ export const Search: React.FC = () => {
                 to={`/product/${product.id}`}
                 style={{ textDecoration: 'none', color: 'inherit' }}
               >
-                <ProductCard product={product} />
+                <ProductCard product={product} showCommission={false} />
               </Link>
             ))}
           </div>

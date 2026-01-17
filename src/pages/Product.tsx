@@ -16,10 +16,9 @@ export const Product: React.FC = () => {
     .filter(p => p.category === product.category && p.id !== product.id)
     .slice(0, 4);
 
-  const handleCopyLink = () => {
-    const affiliateLink = `https://altfindr.com/ref/${product.id}`;
-    navigator.clipboard.writeText(affiliateLink);
-    alert('Affiliate link copied to clipboard!');
+  const handleAddToCart = () => {
+    alert('Added to cart!');
+    // In real app, would add to cart state/localStorage
   };
 
   return (
@@ -47,31 +46,22 @@ export const Product: React.FC = () => {
               </p>
             </div>
 
-            <div className="product__commission">
-              <div className="product__commission-badge">
-                Earn {product.commission}% commission
-              </div>
-              <p className="product__commission-text">
-                You'll earn £{((product.price * (product.commission || 0)) / 100).toFixed(2)} per sale
-              </p>
-            </div>
-
             <div className="product__actions">
               <Button 
-                onClick={handleCopyLink}
-                variant="secondary"
+                onClick={handleAddToCart}
+                variant="primary"
                 size="large"
                 className="product__action-button"
               >
-                📋 Copy Affiliate Link
+                Add to Cart
               </Button>
-              <Link to={`/promote/${product.id}`}>
+              <Link to={`/promote/${product.id}`} className="product__promote-link">
                 <Button 
-                  variant="primary"
+                  variant="outline"
                   size="large"
                   className="product__action-button"
                 >
-                  🚀 Promote This Product
+                  Promote
                 </Button>
               </Link>
             </div>
@@ -89,7 +79,7 @@ export const Product: React.FC = () => {
                   to={`/product/${relatedProduct.id}`}
                   style={{ textDecoration: 'none', color: 'inherit' }}
                 >
-                  <ProductCard product={relatedProduct} />
+                  <ProductCard product={relatedProduct} showCommission={false} />
                 </Link>
               ))}
             </div>

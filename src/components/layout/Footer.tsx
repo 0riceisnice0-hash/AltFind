@@ -10,7 +10,6 @@ export const Footer: React.FC = () => {
           <Link to="/" className="footer__link">Home</Link>
           <Link to="/discover" className="footer__link">Discover</Link>
           <Link to="/contact" className="footer__link">Contact</Link>
-          <Link to="/affiliate" className="footer__link">Affiliate</Link>
           <Link to="/legal" className="footer__link">Legal</Link>
         </div>
         <p className="footer__text">

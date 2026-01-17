@@ -9,35 +9,61 @@ export const Category: React.FC = () => {
 
   // Map URL slugs to product categories
   const categoryMap: { [key: string]: { name: string; productCategory: string; description: string } } = {
+    'outdoor': {
+      name: 'Mountaineering / Outdoor',
+      productCategory: 'Jackets', // Using existing products as placeholder
+      description: 'Gear for adventure seekers and outdoor enthusiasts. From rugged jackets to technical equipment.',
+    },
+    'streetwear': {
+      name: 'Streetwear',
+      productCategory: 'Hoodies', // Using existing products as placeholder
+      description: 'Urban fashion essentials. Stay on-trend with the latest streetwear styles.',
+    },
+    'workwear': {
+      name: 'Workwear',
+      productCategory: 'Jackets', // Using existing products as placeholder
+      description: 'Professional attire for the modern workplace. Stylish and functional.',
+    },
+    'tech': {
+      name: 'Tech Accessories',
+      productCategory: 'Accessories', // Using existing products as placeholder
+      description: 'Gadgets and accessories for the tech-savvy. Enhance your digital lifestyle.',
+    },
+    'fitness': {
+      name: 'Fitness',
+      productCategory: 'Trainers', // Using existing products as placeholder
+      description: 'Workout gear and apparel. Perform your best with quality fitness products.',
+    },
+    // Legacy categories
     'watches': {
       name: 'Watches',
       productCategory: 'Watches',
-      description: 'Discover premium timepieces with great commission rates. From classic designs to modern styles.',
+      description: 'Discover premium timepieces. From classic designs to modern styles.',
     },
     'hoodies': {
       name: 'Hoodies',
       productCategory: 'Hoodies',
-      description: 'Promote comfortable and stylish hoodies. Perfect for casual wear and streetwear enthusiasts.',
+      description: 'Comfortable and stylish hoodies. Perfect for casual wear.',
     },
     'sneakers': {
       name: 'Sneakers',
       productCategory: 'Sneakers',
-      description: 'Share the latest sneaker trends with your audience. From classic whites to statement pieces.',
+      description: 'Latest sneaker trends. From classic whites to statement pieces.',
     },
     'jackets': {
       name: 'Jackets',
       productCategory: 'Jackets',
-      description: 'Promote stylish outerwear for every season. From puffers to bombers and everything in between.',
+      description: 'Stylish outerwear for every season. From puffers to bombers.',
     },
     'accessories': {
       name: 'Accessories',
       productCategory: 'Accessories',
-      description: 'Complete any outfit with these must-have accessories. Belts, sunglasses, wallets, and more.',
+      description: 'Complete any outfit with must-have accessories.',
     },
     'bags': {
       name: 'Bags',
       productCategory: 'Bags',
-      description: 'Promote practical and stylish bags for every occasion. Totes, backpacks, and designer pieces.',
+      description: 'Practical and stylish bags for every occasion.',
     },
   };
 
@@ -58,7 +84,7 @@ export const Category: React.FC = () => {
       <section className="category__hero">
         <div className="category__hero-content">
           <h1 className="category__hero-title">
-            Best {categoryInfo.name} Products to Promote
+            {categoryInfo.name}
           </h1>
           <p className="category__hero-subtitle">
             {categoryInfo.description}
@@ -83,7 +109,7 @@ export const Category: React.FC = () => {
                     to={`/product/${product.id}`}
                     style={{ textDecoration: 'none', color: 'inherit' }}
                   >
-                    <ProductCard product={product} />
+                    <ProductCard product={product} showCommission={false} />
                   </Link>
                 ))}
               </div>

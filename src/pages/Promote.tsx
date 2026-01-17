@@ -12,7 +12,7 @@ export const Promote: React.FC = () => {
   const [captionCopied, setCaptionCopied] = useState(false);
 
   const affiliateLink = `https://altfindr.com/ref/${product.id}`;
-  const caption = `Check out this amazing ${product.title} from ${product.retailer}! 🔥\n\nOnly £${product.price.toFixed(2)} - get yours now!\n\n${affiliateLink}\n\n#fashion #style #affiliate`;
+  const caption = `Check out this amazing ${product.title} from ${product.retailer}!\n\nOnly £${product.price.toFixed(2)} - get yours now!\n\n${affiliateLink}\n\n#fashion #style #affiliate`;
 
   const handleCopyLink = () => {
     navigator.clipboard.writeText(affiliateLink);
@@ -76,7 +76,7 @@ export const Promote: React.FC = () => {
               variant="primary"
               className="promote__copy-button"
             >
-              {linkCopied ? '✓ Copied!' : 'Copy Link'}
+              {linkCopied ? 'Copied!' : 'Copy Link'}
             </Button>
           </div>
         </div>
@@ -91,7 +91,7 @@ export const Promote: React.FC = () => {
               rel="noopener noreferrer"
               className="promote__share-button promote__share-button--twitter"
             >
-              <span className="promote__share-icon">𝕏</span>
+              <span className="promote__share-icon">X</span>
               Twitter/X
             </a>
             <a 
@@ -116,7 +116,7 @@ export const Promote: React.FC = () => {
               href={shareLinks.email}
               className="promote__share-button promote__share-button--email"
             >
-              <span className="promote__share-icon">✉</span>
+              <span className="promote__share-icon">@</span>
               Email
             </a>
           </div>
@@ -137,7 +137,7 @@ export const Promote: React.FC = () => {
               variant="primary"
               className="promote__copy-button"
             >
-              {captionCopied ? '✓ Copied!' : 'Copy Caption'}
+              {captionCopied ? 'Copied!' : 'Copy Caption'}
             </Button>
           </div>
         </div>
