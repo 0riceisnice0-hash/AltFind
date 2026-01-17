@@ -53,6 +53,10 @@
   white-space: nowrap;
 }
 
+.header__login-link {
+  text-decoration: none;
+}
+
 @media (max-width: 768px) {
   .header__container {
     gap: 1rem;
