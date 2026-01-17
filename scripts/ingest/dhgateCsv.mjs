@@ -153,9 +153,7 @@ async function ingestCSV() {
       continue;
     }
 
-    // Check if it was an insert or update
-    // Since we can't easily determine this, we'll count all successful operations as updates
-    // In practice, Supabase doesn't distinguish between insert/update in upsert response
+    // Count successful upsert operations
     updated++;
   }
 

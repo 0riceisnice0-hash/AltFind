@@ -10,19 +10,15 @@ export interface Product {
   description?: string;
 }
 
-export interface SearchResult {
-  id: number;
-  title: string;
-  image_url: string;
-  price: number;
-  currency: string;
-  affiliate_url: string;
-  category: string;
-  retailer_name: string;
-}
+export type Category = 'All' | 'Jackets' | 'Hoodies' | 'Trousers' | 'Trainers' | 'Boots' | 'Watches' | 'Sneakers' | 'Accessories' | 'Bags';
+
+export type SortOption = 'similarity' | 'price-low' | 'price-high';
+
+// Re-export SearchResult from API module
+export type { SearchResult } from '../lib/api/search';
 
 // Adapter function to convert SearchResult to Product
-export function searchResultToProduct(result: SearchResult): Product {
+export function searchResultToProduct(result: import('../lib/api/search').SearchResult): Product {
   return {
     id: result.id.toString(),
     title: result.title,
@@ -33,7 +29,3 @@ export function searchResultToProduct(result: SearchResult): Product {
     outboundUrl: result.affiliate_url,
   };
 }
-
-export type Category = 'All' | 'Jackets' | 'Hoodies' | 'Trousers' | 'Trainers' | 'Boots' | 'Watches' | 'Sneakers' | 'Accessories' | 'Bags';
-
-export type SortOption = 'similarity' | 'price-low' | 'price-high';
