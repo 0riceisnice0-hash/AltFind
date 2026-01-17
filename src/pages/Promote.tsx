@@ -12,7 +12,22 @@ export const Promote: React.FC = () => {
   const [captionCopied, setCaptionCopied] = useState(false);
 
   const affiliateLink = `https://altfindr.com/ref/${product.id}`;
-  const caption = `Check out this amazing ${product.title} from ${product.retailer}!\n\nOnly £${product.price.toFixed(2)} - get yours now!\n\n${affiliateLink}\n\n#fashion #style #affiliate`;
+  
+  // Generate category-appropriate hashtags
+  const getCategoryHashtags = (category: string) => {
+    const hashtagMap: { [key: string]: string } = {
+      'Jackets': '#fashion #outerwear #style',
+      'Hoodies': '#streetwear #fashion #style',
+      'Watches': '#watches #accessories #style',
+      'Sneakers': '#sneakers #footwear #streetwear',
+      'Trainers': '#fitness #workout #activewear',
+      'Accessories': '#accessories #fashion #style',
+      'Bags': '#bags #accessories #fashion',
+    };
+    return hashtagMap[category] || '#fashion #style #shopping';
+  };
+  
+  const caption = `Check out this amazing ${product.title} from ${product.retailer}!\n\nOnly £${product.price.toFixed(2)} - get yours now!\n\n${affiliateLink}\n\n${getCategoryHashtags(product.category)}`;
 
   const handleCopyLink = () => {
     navigator.clipboard.writeText(affiliateLink);
