@@ -18,7 +18,7 @@ export const Header: React.FC = () => {
     <header className="header">
       <div className="header__container">
         <Link to="/" className="header__logo">
-          AltFind
+          AltFindr
         </Link>
         <nav className="header__nav">
           <Link to="/" className="header__link">Home</Link>
