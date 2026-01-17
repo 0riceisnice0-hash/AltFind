@@ -4,8 +4,17 @@ import './Legal.css';
 export const Legal: React.FC = () => {
   return (
     <div className="legal">
+      {/* Hero Section */}
+      <section className="legal__hero">
+        <div className="legal__hero-content">
+          <h1 className="legal__hero-title">Legal</h1>
+          <p className="legal__hero-subtitle">
+            Privacy, terms, and transparency
+          </p>
+        </div>
+      </section>
+
       <div className="legal__container">
-        <h1 className="legal__title">Legal</h1>
 
         <section className="legal__section">
           <h2 className="legal__section-title">Privacy Policy</h2>
@@ -20,7 +29,7 @@ export const Legal: React.FC = () => {
           <h2 className="legal__section-title">Terms of Service</h2>
           <p className="legal__text">
             This is a placeholder for the Terms of Service. In a production environment, this section 
-            would outline the terms and conditions for using AltFind, including user responsibilities, 
+            would outline the terms and conditions for using AltFindr, including user responsibilities, 
             acceptable use policies, disclaimers, and limitations of liability.
           </p>
         </section>
@@ -28,7 +37,7 @@ export const Legal: React.FC = () => {
         <section className="legal__section">
           <h2 className="legal__section-title">Affiliate Disclosure</h2>
           <p className="legal__text">
-            AltFind participates in various affiliate marketing programs. When you click on product 
+            AltFindr participates in various affiliate marketing programs. When you click on product 
             links and make a purchase, we may earn a commission from qualifying purchases. This 
             commission comes at no additional cost to you—you pay the same price you would if you 
             went directly to the retailer.
@@ -40,7 +49,7 @@ export const Legal: React.FC = () => {
           </p>
           <p className="legal__text">
             The income we generate through these commissions helps us maintain and improve the 
-            AltFind platform, keeping it free for all users.
+            AltFindr platform, keeping it free for all users.
           </p>
         </section>
       </div>

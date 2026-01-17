@@ -1,89 +1,99 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { SearchBar } from '../components/SearchBar';
 import { Badge } from '../components/ui/Badge';
+import { Button } from '../components/ui/Button';
+import { ProductCard } from '../components/ProductCard';
+import { mockProducts } from '../data/mockProducts';
 import './Home.css';
 
 export const Home: React.FC = () => {
+  // Get recently viewed products (placeholder - would be from localStorage in real implementation)
+  const recentlyViewed = mockProducts.slice(0, 4);
+  
+  // Get popular products
+  const popularProducts = mockProducts.slice(4, 16);
+
   const fashionImages = [
     { 
-      url: 'https://ae01.alicdn.com/kf/S8c5e3f3c8e4a4e3d9f8e7d6c5b4a3d2/Women-s-Fashion-Casual-Blazer.jpg',
-      alt: 'Women Fashion Casual Blazer'
+      url: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=800&q=80',
+      alt: 'Minimal fashion editorial'
     },
     { 
-      url: 'https://img.kwcdn.com/product/fancy/5f5e5d5c5b5a5958/5f5e5d5c5b5a5958.jpg',
-      alt: 'Casual Fashion Style'
+      url: 'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=800&q=80',
+      alt: 'Clean streetwear style'
     },
     { 
-      url: 'https://ae01.alicdn.com/kf/H1a2b3c4d5e6f7g8h9i0j1k2l3m4n5o6/Mens-Casual-Shirt.jpg',
-      alt: 'Mens Casual Shirt'
+      url: 'https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=800&q=80',
+      alt: 'Bright fashion lookbook'
     },
     { 
-      url: 'https://img.kwcdn.com/product/open/2023/11/15/1700000000000-1-cate.jpg',
-      alt: 'Trendy Fashion Product'
+      url: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=800&q=80',
+      alt: 'Neutral fashion photography'
     },
     { 
-      url: 'https://ae01.alicdn.com/kf/A1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6/Women-Jeans.jpg',
-      alt: 'Women Jeans'
+      url: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=800&q=80',
+      alt: 'Editorial outfit aesthetic'
     },
     { 
-      url: 'https://img.kwcdn.com/product/Fancyalgo/VirtualModelMatting/0c5e4f3d2c1b0a9/6f5e4d3c2b1a0918.jpg',
-      alt: 'Fashion Model Style'
+      url: 'https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=800&q=80',
+      alt: 'Minimal wardrobe essentials'
     },
     { 
-      url: 'https://ae01.alicdn.com/kf/X9y8z7a6b5c4d3e2f1g0h9i8j7k6l5m4/Sneakers-Men.jpg',
-      alt: 'Men Sneakers'
+      url: 'https://images.unsplash.com/photo-1539533018447-63fcce2678e3?auto=format&fit=crop&w=800&q=80',
+      alt: 'Fashion model neutral tones'
     },
     { 
-      url: 'https://img.kwcdn.com/product/open/2023/12/01/1701400000000-2-cate.jpg',
-      alt: 'Fashion Category'
+      url: 'https://images.unsplash.com/photo-1544957992-20514f595d6f?auto=format&fit=crop&w=800&q=80',
+      alt: 'Streetwear clean aesthetic'
     },
     { 
-      url: 'https://ae01.alicdn.com/kf/M4n3o2p1q0r9s8t7u6v5w4x3y2z1a0b9/Women-Dress.jpg',
-      alt: 'Women Dress'
+      url: 'https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?auto=format&fit=crop&w=800&q=80',
+      alt: 'Layered outfit inspiration'
     },
     { 
-      url: 'https://img.kwcdn.com/product/fancy/4a3b2c1d0e9f8e7d6c5b4a3b2c1/4a3b2c1d0e9f8e7d.jpg',
-      alt: 'Fancy Fashion'
+      url: 'https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=800&q=80',
+      alt: 'Monochrome fashion style'
     },
     { 
-      url: 'https://ae01.alicdn.com/kf/P5q4r3s2t1u0v9w8x7y6z5a4b3c2d1e0/Mens-Jacket.jpg',
-      alt: 'Mens Jacket'
+      url: 'https://images.unsplash.com/photo-1562157873-818bc0726f68?auto=format&fit=crop&w=800&q=80',
+      alt: 'Casual chic fashion'
     },
     { 
-      url: 'https://img.kwcdn.com/product/open/2024/01/10/1704900000000-3-cate.jpg',
-      alt: 'Latest Fashion'
+      url: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=800&q=80',
+      alt: 'Neutral tones outfit'
     },
     { 
-      url: 'https://ae01.alicdn.com/kf/L6m5n4o3p2q1r0s9t8u7v6w5x4y3z2a1/Women-Coat.jpg',
-      alt: 'Women Coat'
+      url: 'https://images.unsplash.com/photo-1558769132-cb1aea1c8f86?auto=format&fit=crop&w=800&q=80',
+      alt: 'Minimal style photography'
     },
     { 
-      url: 'https://img.kwcdn.com/product/Fancyalgo/VirtualModelMatting/1d0c9b8a7968574/5e4d3c2b1a091827.jpg',
-      alt: 'Virtual Model Fashion'
+      url: 'https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=800&q=80',
+      alt: 'Editorial fashion shoot'
     },
     { 
-      url: 'https://ae01.alicdn.com/kf/K7l6m5n4o3p2q1r0s9t8u7v6w5x4y3z2/Sports-Shoes.jpg',
-      alt: 'Sports Shoes'
+      url: 'https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=800&q=80',
+      alt: 'Clean fashion photography'
     },
     { 
-      url: 'https://img.kwcdn.com/product/open/2023/10/20/1697800000000-4-cate.jpg',
-      alt: 'Fashion Collection'
+      url: 'https://images.unsplash.com/photo-1479064555552-3ef4979f8908?auto=format&fit=crop&w=800&q=80',
+      alt: 'Layered neutral look'
     },
     { 
-      url: 'https://ae01.alicdn.com/kf/J8k7l6m5n4o3p2q1r0s9t8u7v6w5x4y3/Mens-Pants.jpg',
-      alt: 'Mens Pants'
+      url: 'https://images.unsplash.com/photo-1467043237213-65f2da53396f?auto=format&fit=crop&w=800&q=80',
+      alt: 'Fashion model bright lighting'
     },
     { 
-      url: 'https://img.kwcdn.com/product/fancy/3c2b1a09f8e7d6c5b4a3c2b1a0/3c2b1a09f8e7d6c5.jpg',
-      alt: 'Trendy Apparel'
+      url: 'https://images.unsplash.com/photo-1511401139252-f158d3209c17?auto=format&fit=crop&w=800&q=80',
+      alt: 'Streetwear editorial style'
     },
     { 
-      url: 'https://ae01.alicdn.com/kf/I9j8k7l6m5n4o3p2q1r0s9t8u7v6w5x4/Women-Sweater.jpg',
-      alt: 'Women Sweater'
+      url: 'https://images.unsplash.com/photo-1491553895911-0055eca6402d?auto=format&fit=crop&w=800&q=80',
+      alt: 'Sneakers fashion detail'
     },
     { 
-      url: 'https://img.kwcdn.com/product/open/2024/02/15/1708000000000-5-cate.jpg',
-      alt: 'Fashion Catalog'
+      url: 'https://images.unsplash.com/photo-1562447686-45df6e6e2229?auto=format&fit=crop&w=800&q=80',
+      alt: 'Minimalist fashion aesthetic'
     }
   ];
 
@@ -131,6 +141,73 @@ export const Home: React.FC = () => {
         </div>
       </section>
 
+      {/* Quick Navigation */}
+      <section className="home__navigation">
+        <div className="home__navigation-content">
+          <Link to="/discover" className="home__nav-card">
+            <h3 className="home__nav-title">Discover</h3>
+            <p className="home__nav-text">Browse by category</p>
+          </Link>
+          <Link to="/search" className="home__nav-card">
+            <h3 className="home__nav-title">Search</h3>
+            <p className="home__nav-text">Find specific products</p>
+          </Link>
+          <Link to="/cart" className="home__nav-card">
+            <h3 className="home__nav-title">Cart</h3>
+            <p className="home__nav-text">View your selections</p>
+          </Link>
+          <Link to="/contact" className="home__nav-card">
+            <h3 className="home__nav-title">Contact</h3>
+            <p className="home__nav-text">Get in touch</p>
+          </Link>
+        </div>
+      </section>
+
+      {/* Recently Viewed Section */}
+      <section className="home__section">
+        <div className="home__section-header">
+          <h2 className="home__section-title">Recently Viewed</h2>
+          <p className="home__section-subtitle">Pick up where you left off</p>
+        </div>
+        <div className="home__products-grid">
+          {recentlyViewed.map((product) => (
+            <Link 
+              key={product.id} 
+              to={`/product/${product.id}`}
+              style={{ textDecoration: 'none', color: 'inherit' }}
+            >
+              <ProductCard product={product} showCommission={false} />
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* Popular Products Section */}
+      <section className="home__section home__section--alt">
+        <div className="home__section-header">
+          <h2 className="home__section-title">Popular Products</h2>
+          <p className="home__section-subtitle">Trending items shoppers love</p>
+        </div>
+        <div className="home__products-grid">
+          {popularProducts.map((product) => (
+            <Link 
+              key={product.id} 
+              to={`/product/${product.id}`}
+              style={{ textDecoration: 'none', color: 'inherit' }}
+            >
+              <ProductCard product={product} showCommission={false} />
+            </Link>
+          ))}
+        </div>
+        <div className="home__cta">
+          <Link to="/discover">
+            <Button variant="primary" size="large">
+              View All Products
+            </Button>
+          </Link>
+        </div>
+      </section>
+
       {/* Fashion Gallery Section */}
       <section className="home__gallery">
         {fashionImages.map((image) => (
@@ -139,6 +216,15 @@ export const Home: React.FC = () => {
               src={image.url} 
               alt={image.alt}
               loading="lazy"
+              decoding="async"
+              width="200"
+              height="300"
+              style={{
+                width: '100%',
+                height: 'auto',
+                backgroundColor: 'rgb(235, 231, 224)'
+              }}
+              className="home__gallery-image"
             />
           </div>
         ))}

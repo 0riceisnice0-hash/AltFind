@@ -5,9 +5,10 @@ import './ProductCard.css';
 
 interface ProductCardProps {
   product: Product;
+  showCommission?: boolean; // Control whether to show commission badge
 }
 
-export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
+export const ProductCard: React.FC<ProductCardProps> = ({ product, showCommission = false }) => {
   const [isSaved, setIsSaved] = useState(false);
 
   const handleSave = (e: React.MouseEvent) => {
@@ -28,12 +29,17 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           alt={product.title}
           className="product-card__image"
         />
+        {showCommission && product.commission && (
+          <span className="product-card__commission">
+            {product.commission}% commission
+          </span>
+        )}
         <button 
           className={`product-card__save ${isSaved ? 'product-card__save--active' : ''}`}
           onClick={handleSave}
           aria-label={isSaved ? 'Unsave' : 'Save'}
         >
-          {isSaved ? '❤️' : '🤍'}
+          {isSaved ? '❤' : '♡'}
         </button>
       </div>
       <div className="product-card__content">
